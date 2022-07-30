@@ -1,4 +1,4 @@
-from re import A
+import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Template,Context
@@ -36,3 +36,10 @@ def Abuelos(self):
     
     return HttpResponse(documento)
 
+# Vista basadas en funciones
+# Vistas basadas en Clases
+
+def read_tareas(request):
+    now = datetime.datetime.now()
+    html = "<html><body>It is now %s.</body></html>" % now
+    return HttpResponse(html)
